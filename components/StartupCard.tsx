@@ -3,6 +3,7 @@ import { formateDate } from '@/lib/utils';
 import { Eye } from 'lucide-react';
 import React from 'react';
 import {Button} from './ui/button'
+import Image from 'next/image';
 
 
 interface startupCardType {
@@ -41,13 +42,13 @@ const StartupCard = ({post}:{ post: startupCardType}) => {
                 </Link>
             </div>
             <Link href={`/user/${authorId}`}>
-                <img src='https://static.vecteezy.com/system/resources/previews/036/594/092/original/man-empty-avatar-photo-placeholder-for-social-networks-resumes-forums-and-dating-sites-male-and-female-no-photo-images-for-unfilled-user-profile-free-vector.jpg' alt={title} className='startup_card_image w-[40px] h-[40px] rounded-3xl ' /> 
+                <Image width={200} height={200} src='https://static.vecteezy.com/system/resources/previews/036/594/092/original/man-empty-avatar-photo-placeholder-for-social-networks-resumes-forums-and-dating-sites-male-and-female-no-photo-images-for-unfilled-user-profile-free-vector.jpg' alt={title} className='startup_card_image w-[40px] h-[40px] rounded-3xl ' /> 
             </Link>
       </div>
 
             <Link href={`/startup/${_id}`}>
                 <p className='startup-card_desc'>{description}</p>
-                <img src={image} alt={title} className='startup-card_img' />
+                <Image height={150} width={150} src={image} alt={title} className='startup-card_img' />
             </Link>
 
             <div className='flex-between mt-5 gap-3'>
